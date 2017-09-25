@@ -1,0 +1,25 @@
+{
+  "name": "sockbot-autojoin",
+  "version": "1.0.0",
+  "description": "Autojoin IRC-like sockbot instances",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yamikuronue/sockbot-autojoin.git"
+  },
+  "author": "yamikuronue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yamikuronue/sockbot-autojoin/issues"
+  },
+  "homepage": "https://github.com/yamikuronue/sockbot-autojoin#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "sinon": "^3.3.0",
+    "sinon-chai": "^2.13.0"
+  }
+}
