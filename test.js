@@ -12,7 +12,7 @@ const fakeTopic = {
 
 const fakeForum = {
     Topic: {
-        getByName: () => fakeTopic
+        getByName: () => Promise.resolve(fakeTopic)
     }
 };
 

@@ -1,3 +1,4 @@
+const debug = require('debug')('sockbot:autojoin');
 const defaultConfig = {
     'channels': []
 }
@@ -19,7 +20,10 @@ module.exports = function officeHours(forum, cfg) {
      * Activate the plugin
      */
     function activate() {
-        const promises = cfg.channels.map((item) => forum.Topic.getByName(item).join())
+        const promises = cfg.channels.map((item) => {
+             forum.Topic.getByName(item)
+                .then((top) => top.join());
+        });
         return Promise.all(promises);
     }
 
@@ -27,7 +31,11 @@ module.exports = function officeHours(forum, cfg) {
      * Deactivate the plugin
      */
     function deactivate() {
-        const promises = cfg.channels.map((item) => forum.Topic.getByName(item).part())
+        const promises = cfg.channels.map((item) => {
+            debug('joining ' + item);
+             forum.Topic.getByName(item)
+                .then((top) => top.part());
+            });
         return Promise.all(promises);
     }
 
